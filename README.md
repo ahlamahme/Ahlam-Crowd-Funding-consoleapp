@@ -14,4 +14,10 @@ beside some add function to help and validate like:
 3-main menu to organize 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 screen
+![lggin](img/login_with_veiwprojects.png)
+![register](img/regester.png)
+![delete](img/delete.png)
+![update](img/update.png)
+![new project](img/new_project.png)
+
 
