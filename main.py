@@ -8,4 +8,4 @@ match user_choic:
     case "REGISTER":
          fun.register()
     case _:
-        print("I can not help you ;)")
+        print("bay;)")

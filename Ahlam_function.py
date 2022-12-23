@@ -25,13 +25,14 @@ def vewi():
         if text in line:
             print(line)
     f2.close()
+    main_menu()
 #----------------------------------delete project------------------
 def delete ():
     # remove a line containing a name
     file_to_read= open("project", 'r')
     lines = file_to_read.readlines()
     file_to_write=open("project", 'w')
-    print("Enter file name to delete:")
+    print("Enter project name to delete:")
     deleted_project=input()
     for line in lines:
     # find() returns -1 if no match is found
@@ -39,6 +40,10 @@ def delete ():
             pass
         else:
                 file_to_write.write(line)
+                print("deleted sussfully")
+    file_to_read.close()
+    file_to_write.close()
+    main_menu()
 #----------------------------------------------------------------------------------
 #---------------------------veiw all project ---------------------------------------
 def vewi_all_project():
@@ -48,13 +53,17 @@ def vewi_all_project():
     for line in lines:
             print(line)
     f2.close()
+    main_menu()
 #--------------------------------------edit in project data---------------------------------------
 def edit():
     x = input("Enter text to be replaced:")
     y = input("Enter replacement text")
     for l in fileinput.input(files="project"):
         l = l.replace(x, y)
+        print("data replaced sussufully")
         sys.stdout.write(l)
+        main_menu()
+
 #---------------------------------------------login----------------------------------------------
 def login ():
     my_list = []
@@ -68,12 +77,14 @@ def login ():
                 my_list = line.split(":")
                 if user_passwrd == my_list[3]:
                     print("sussfully login")
-                    main_menu()
+
                 else:
                     print("wrong passwrd")
         else:
             print("no such user name")
     f.close()
+    main_menu()
+
 #----------------------create new project---------------------------------------------
 def project():
     pfile =open("project","a")
@@ -102,6 +113,7 @@ def project():
     pfile.write(x)
     pfile.write("\n")
     pfile.close()
+    main_menu()
 #----------------------------------register--------------------------------------
 def register():
     f = open("person",'a')
@@ -146,7 +158,10 @@ def main_menu():
         vewi_all_project()
     case "delete_project":
         delete()
-    case "ediet_project":
+    case "edit project":
         edit()
     case _:
         print("No such process wait the new verion of the project ;)")
+
+
+
